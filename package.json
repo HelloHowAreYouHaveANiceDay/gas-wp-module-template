@@ -1,0 +1,21 @@
+{
+  "name": "gas-webpack",
+  "version": "1.0.0",
+  "description": "gas-webpack template",
+  "main": "src/index.js",
+  "author": "liboli.lilibo@gmail.com",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start:dev": "webpack-dev-server",
+    "build": "webpack --mode production",
+    "push": "webpack --mode production && clasp push"
+  },
+  "devDependencies": {
+    "es3ify-webpack-plugin": "^0.0.1",
+    "gas-webpack-plugin": "^0.3.0",
+    "webpack": "^4.14.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
