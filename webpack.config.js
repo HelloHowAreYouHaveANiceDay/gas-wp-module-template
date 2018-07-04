@@ -1,6 +1,5 @@
 const gasWebpackPlugin = require('gas-webpack-plugin');
-const es3ifyWebpackPlugin = require('es3ify-webpack-plugin');
- 
+
 module.exports = {
   context: __dirname,
   entry: './src/index.js',
@@ -8,8 +7,20 @@ module.exports = {
     path: __dirname,
     filename: './dist/Code.gs'
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      },
+    ]
+  },
   plugins: [
-    new gasWebpackPlugin,
-    new es3ifyWebpackPlugin,
+    new gasWebpackPlugin(),
   ]
 }
